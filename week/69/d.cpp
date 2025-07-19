@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 const int N = 110;
-int n, m, ans[N][N];
+int ans[N][N], n, m;
 int main() {
-    cin >> n >> m;
+    scanf("%d%d", &n, &m);
     vector<int> nums;
     int num; while(cin >> num) nums.push_back(num);
     for (int k = 0, r = 0, c = 0, g = 0; k < nums.size(); k ++)
