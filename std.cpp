@@ -1,25 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int N = 110;
-int n, m, ans[N][N];
+const int N = 1e5 + 10;
+int a[N], b[N], f[N][N];
+int n;
 int main() {
-    cin >> n >> m;
-    vector<int> nums;
-    int num; while(cin >> num) nums.push_back(num);
-    for (int k = 0, r = 0, c = 0, g = 0; k < nums.size(); k ++)
-    {
-        for (int i = 0; i < nums[k] && r < n; i ++)
+    scanf("%d", &n);
+    for (int i = 1; i <= n; i ++)
+        scanf("%d", &a[i]);
+    for (int i = 1; i <= n; i ++)
+        scanf("%d", &b[i]);
+    for (int i = 1; i <= n; i ++)
+        for (int j = 1; j <= n; j ++)
         {
-            ans[r][c] = g;
-            if(++ c >= m) c = 0, ++ r;
+            f[i][j] = max(f[i - 1][j], f[i][j - 1]);
+            f[i][j] = max(f[i][j], f[i - 1][j - 1] + 1);
         }
-        g ^= 1;
-    }
-    for (int i = 0; i < n; i ++)
-    {
-        for (int j = 0; j < m; j ++)
-            cout << ans[i][j];
-        cout << endl;
-    }
+    printf("%d", f[n][n]);
     return 0;
 }
