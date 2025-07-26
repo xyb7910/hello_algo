@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "讲义/动态规划/综述.md",
+                "file": "week/70/赛时纪实.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "综述"
+              "title": "赛时纪实"
             }
           }
         ]
@@ -170,6 +170,7 @@
   },
   "active": "7799f93fcbc1812f",
   "lastOpenFiles": [
+    "讲义/动态规划/综述.md",
     "讲义/动态规划/线性dp/最长上升子序列.md",
     "讲义/排序/综合讲义.md",
     "讲义/排序/时间复杂度计算.md",
@@ -178,7 +179,6 @@
     "讲义/动态规划/线性dp/数字三角形.md",
     "讲义/排序/排序时间复杂度分析.md",
     "讲义/排序",
-    "讲义/动态规划/综述.md",
     "讲义/动态规划/背包问题/分组背包.md",
     "week/69/d.exe",
     "week/69/d.cpp",

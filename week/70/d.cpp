@@ -1,21 +1,22 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
-constexpr ll N = 2e5 + 5;
-
-string s, s1;
-int n, ans, len;
-int main(){
-
-    cin >> s >> n;
-    len = s.size();
-    while(n--){
-        cin >> s1;
-        bool flag = s1.size() == len;
-        for(int i = 0, j = len - 1; i < len && j >= 0; i++, j--)
-            if((s[i] >= '0' && s[i] <= '9') != (s1[j] >= '0' && s1[j] <= '9')) flag = 0;
-        ans += flag;
+// author:yanpengbo
+const int N = 1e3 + 10;
+typedef pair<int, int> PII;
+int a[N], res[N];
+int main() {
+    int n, k;
+    cin >> n >> k;
+    for (int i = 0; i < n; i ++) cin >> a[i];
+    for (int i = 0; i < n; i ++) {
+        vector<PII> dist;
+        for (int j = 0; j < n; j ++) {
+            if (i != j) dist.push_back({abs(a[i] - a[j]), j + 1});
+        }
+        sort(dist.begin(), dist.end());
+        res[i] = dist[k - 1].second;
     }
-    cout << ans;
+    for (int i = 0; i < n; i ++ ) 
+        cout << res[i] << " ";
     return 0;
 }
