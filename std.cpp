@@ -1,20 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int N = 1e5 + 10;
-int a[N], b[N], f[N][N];
-int n;
+const int N = 20;
+int n, k;
+int nums[N], used[N];
+
+void dfs(int u) {
+	if(u > k) {
+		for (int i = 1; i <= k; i ++)
+			printf("%5d",nums[i]);
+		puts("");
+		return ;
+	}
+
+	for (int i = 1; i <= n; i ++) {
+		if(!used[i]) {
+			used[i] = 1;
+			nums[u] = i;
+			dfs(u + 1);
+			used[i] = 0; 
+		}
+	}
+}
+
 int main() {
-    scanf("%d", &n);
-    for (int i = 1; i <= n; i ++)
-        scanf("%d", &a[i]);
-    for (int i = 1; i <= n; i ++)
-        scanf("%d", &b[i]);
-    for (int i = 1; i <= n; i ++)
-        for (int j = 1; j <= n; j ++)
-        {
-            f[i][j] = max(f[i - 1][j], f[i][j - 1]);
-            f[i][j] = max(f[i][j], f[i - 1][j - 1] + 1);
-        }
-    printf("%d", f[n][n]);
-    return 0;
+	cin >> n >> k;
+	dfs(1);
+	return 0;
 }
